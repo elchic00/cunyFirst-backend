@@ -42,8 +42,8 @@ const configureApp = async () => {
 
 
   //define a route
-  app.get("/hello", (request, response) => {
-    response.send("hello world!")
+  app.get("/", (request, response) => {
+    response.send("Hello world! Want to use my API?")
   });
 
    // Mount apiRouter
