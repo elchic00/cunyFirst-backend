@@ -3,10 +3,10 @@ const {dbName, dbUser, dbPwd} = require('./configDB');
 
 
 const config = {
-    user: dbUser,
-    host: 'localhost',
-    port: 5432,
-    password: dbPwd
+  user: process.env.PG_USER,
+  host: process.env.PG_HOST,
+  port: 5432,
+  password: process.env.PG_PASSWORD,
 };
   
   
