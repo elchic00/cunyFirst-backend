@@ -3,14 +3,14 @@ const { dbName, dbUser, dbPwd } = require('./configDB');
 
 require("dotenv").config();
  
-const config = {
-    user: process.env.PG_DB,
-    host: process.env.PG_HOST,
-    port: 5432,
-    password: process.env.PG_PASSWORD
-};
+// const config = {
+//     user: process.env.PG_DB,
+//     host: process.env.PG_HOST,
+//     port: 5432,
+//     password: process.env.PG_PASSWORD
+// };
   
-          const { Pool } = require("pg");
+const { Pool } = require("pg");
 
   //attempt to create DB
   //if it already exists, this does nothing and just connects to
@@ -22,7 +22,7 @@ const config = {
         connectionString:
           process.env.DATABASE_URL ||
           "postgresql://postgres:drew@localhost:5432/final-backend",
-        ssl: process.env.DATABASE_URL ? true : false,
+        ssl: process.env.DATABASE_URL ?  { rejectUnauthorized: false } : false,
       });
         pool.connect();
           // await pgtools.createdb(config, process.env.PG_DB);
