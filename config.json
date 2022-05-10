@@ -1,0 +1,19 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "drew",
+    "database": "final-backend",
+    "host": "localhost",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "zttvyqdqyosecx",
+    "password": "f7ca7c2417682b5bd06ee550a3c432b29c9d225e0e922f8f030c25d9a2ecf5eb",
+    "database": "d4l35ir0llope6",
+    "host": "localhost",
+    "dialect": "postgres",
+    "operatorsAliases": false,
+    "use_env_variable": "DATABASE_URL"
+  }
+}
