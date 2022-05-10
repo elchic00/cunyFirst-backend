@@ -1,6 +1,7 @@
 //import database setup utils
 const createDB = require('./database/utils/createDB');
 const seedDB = require('./database/utils/seedDB');
+require("dotenv").config();
 
 //import Sequelize instance
 const db = require('./database');
@@ -71,7 +72,7 @@ const configureApp = async () => {
 
 const bootApp = async () => {
   //creates local database if it doesn't exist
-  await createDB();
+  !process.env.DATABASE_URL && await createDB();
 
   //calls sync which is a Sequelize method that creates the database tables
   //calls seedDB which will insert initial data into the tables
