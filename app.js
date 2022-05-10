@@ -37,7 +37,7 @@ const configureApp = async () => {
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
   //ignore browser requests for favicon file
-  
+
   // app.get('/favicon.ico', (req, res) => res.status(204));
 
 
@@ -88,5 +88,5 @@ const bootApp = async () => {
 bootApp();
 
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, console.log(`Server started on ${PORT}`));
