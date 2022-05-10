@@ -22,7 +22,7 @@ const config = {
         connectionString:
           process.env.DATABASE_URL ||
           "postgresql://postgres:drew@localhost:5432/final-backend",
-        ssl: process.env.DATABASE_URL ? true : false,
+        ssl: process.env.DATABASE_URL ?  { rejectUnauthorized: false } : false,
       });
         pool.connect();
           // await pgtools.createdb(config, process.env.PG_DB);
