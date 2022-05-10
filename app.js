@@ -41,7 +41,7 @@ const configureApp = async () => {
 
 
   //define a route
-  app.get("/", (request, response) => {
+  app.get("/hello", (request, response) => {
     response.send("hello world!")
   });
 
