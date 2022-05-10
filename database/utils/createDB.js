@@ -1,12 +1,13 @@
 const pgtools = require('pgtools');
 const {dbName, dbUser, dbPwd} = require('./configDB');
-
+require("dotenv").config();
+ 
 
 const config = {
-    user: dbUser,
-    host: 'localhost',
+    user: process.env.PG_DB,
+    host: process.env.PG_HOST,
     port: 5432,
-    password: dbPwd
+    password: process.env.PG_PASSWORD
 };
   
   
