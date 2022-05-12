@@ -46,8 +46,8 @@ const configureApp = async () => {
   //ignore browser requests for favicon file
   app.get("/favicon.ico", (req, res) => res.status(204));
   //define a route
-  app.get("/hello", (request, response) => {
-    response.send("hello world!");
+  app.get("/", (request, response) => {
+    response.send("Hello world! Want to use my API?");
   });
 
   // Mount apiRouter
@@ -74,7 +74,7 @@ const configureApp = async () => {
 
 const bootApp = async () => {
   //creates local database if it doesn't exist
-  await createDB();
+  !process.env.DATABASE_URL && (await createDB());
 
   //calls sync which is a Sequelize method that creates the database tables
   //calls seedDB which will insert initial data into the tables
@@ -88,5 +88,5 @@ const bootApp = async () => {
 
 bootApp();
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, console.log(`Server started on ${PORT}`));
