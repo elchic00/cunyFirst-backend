@@ -1,7 +1,4 @@
-require("dotenv").config();
-
 const pgtools = require("pgtools");
-const { Pool } = require("pg");
 const { dbName, dbUser, dbPwd } = require("./configDB");
 
 const config = {

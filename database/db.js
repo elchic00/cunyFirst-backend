@@ -3,7 +3,6 @@
 // Module dependencies;
 const Sequelize = require('sequelize');
 const {dbName, dbUser, dbPwd} = require('./utils/configDB');
-require("dotenv").config();
 
 // Confirmation message (limit these in production);
 console.log('Opening database connection');
@@ -18,8 +17,7 @@ new Sequelize(process.env.DATABASE_URL, {
       }
     }
   }
-)
- : new Sequelize(dbName, dbUser, dbPwd, {
+) : new Sequelize(dbName, dbUser, dbPwd, {
   host: 'localhost',
   dialect: 'postgres',
   port: 5432,

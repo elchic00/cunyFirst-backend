@@ -1,7 +1,6 @@
 //import database setup utils
 const createDB = require('./database/utils/createDB');
 const seedDB = require('./database/utils/seedDB');
-require("dotenv").config();
 
 //import Sequelize instance
 const db = require('./database');
