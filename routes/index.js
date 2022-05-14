@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 
 // Subrouters;
-//const coursesRouter = require('./courses');
 const instructorsRouter = require('./instructors');
 const coursesRouter = require('./courses')
 

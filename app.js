@@ -12,11 +12,10 @@ const db = require("./database");
 const syncDatabase = async () => {
   try {
     //the {force: true} option will clear the database tables
+    // await db.sync({ force: true });
     //every time we restart the server
     //remove the option if you want the data to persist, ie:
-    //await db.sync();
-
-    await db.sync({ force: true });
+    await db.sync();
     console.log("------Synced to db--------");
     await seedDB();
     console.log("--------Successfully seeded db--------");
