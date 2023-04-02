@@ -46,7 +46,7 @@ const configureApp = async () => {
   app.get("/favicon.ico", (req, res) => res.status(204));
   //define a route
   app.get("/", (request, response) => {
-    response.send("Hello world! Want to use my API?");
+    response.send("Hello world! Want to use my API to keep track of your classes?");
   });
 
   // Mount apiRouter
